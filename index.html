@@ -48,5 +48,143 @@
         </div>
       </div>
 
+      <div class="container mt-3">
+        <h3>Modal Example</h3>
+        <p>Click on the button to open the modal.</p>
+        
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+          Open modal
+        </button>
+      </div>
+      
+      <!-- The Modal -->
+      <div class="modal modal-lg fade" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+      
+            <div class="modal-body">
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button><br>
+              <h4 class="modal-title text-center">Online Payment</h4>
+              <div>
+                <button type="button" class="btn-light">Login</button>
+                <button type="button" class="btn-light">Register</button>
+              </div>
+              <hr>
+              <div>
+                <form id="register">
+                  <div class="d-flex">
+                    <label for="fullname" class="form-label">Name</label>
+                    <select class="form-select">
+                      <option>Mr.</option>
+                      <option>Mrs.</option>
+                      <option>Ms.</option>
+                    </select>
+                    <input type="text" id="fullname" class="form-control" placeholder="Name*">
+                  </div>
+                  <label for="rEmail" class="form-label">Email</label>
+                  <input type="rEmail" id="rEmail" class="form-control" placeholder="Email*">
+                  <label for="mobile" class="form-label">Mobile</label>
+                  <input type="text" id="mobile" class="form-control" placeholder="Mobile*">
+                  <label for="rPassword" class="form-label">Password</label>
+                  <input type="rPassword" id="rPassword" class="form-control" placeholder="Password*">
+                  <button type="submit" class="btn btn-primary">Save and Continue</button>
+                </form>
+              </div>
+              <div>
+                <form id="login">
+                  <label for="lEmail" class="form-label">Email</label>
+                  <input type="lEmail" id="lEmail" class="form-control" placeholder="Email*">
+                  <label for="lPassword" class="form-label">Password</label>
+                  <input type="lPassword" id="lPassword" class="form-control" placeholder="Password*">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+              </div>
+            </div>
+      
+          </div>
+        </div>
+      </div>
+
+      <div id="support" class="container">
+        <div class="row">
+          <div class="col-6">
+            <img src="support.png" alt="logo" class="img-fluid">
+          </div>
+          <div class="col-6 text-center">
+            <h6>Online Payment</h6>
+            <h1>24/7 Customer Service Support</h1>
+            <p>
+              An an valley indeed so no wonder future nature 
+              vanity. Debating all she mistaken indulged believed
+               provided declared. He many kept on draw lain song 
+               as same.
+            </p>
+            <button class="btn btn-info">Support</button>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div id="social" class="row">
+          <div class="col-md-6 text-start">
+            <h4>Join Us</h4>
+            <div class="d-flex">
+              <span><i class="bi-facebook"></i></span>
+              <span><i class="fa fa-twitter-square"></i></span>
+              <span><i class="bi-linkedin"></i></span>
+              <span><i class="bi-instagram"></i></span>
+              <span><i class="bi-rss-fill"></i></span>
+            </div>
+          </div>
+          <div class="col-md-6 text-end">
+            <h4>Subscribe to our Newsletter</h4>
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Enter Email">
+              <button class="btn btn-info input-group-text">Subscribe</button>
+            </div>
+          </div>
+        </div>
+        <div id="more" class="row">
+          <div class="col-sm-4 text-center">
+            <h5>Company</h5>
+            <ul>
+              <li>About</li>
+              <li>Support</li>
+              <li>FAQ</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+          <div class="col-sm-4 text-center">
+            <h5>Services</h5>
+            <ul>
+              <li>Water</li>
+              <li>Electricity</li>
+              <li>Phone</li>
+              <li>Rent/Morgage</li>
+              <li>Car Insurance</li>
+              <li>Car Loan</li>
+            </ul>
+          </div>
+          <div class="col-sm-4 text-center">
+            <h5>Payment Methods</h5>
+            <ul>
+              <li>Credit Cards</li>
+              <li>Debit Cards</li>
+              <li>Any Visa Debit Card (VBV)</li>
+              <li>Direct Bank Debits</li>
+              <li>Cash Cards</li>
+            </ul>
+          </div>
+        </div>
+        <div id="foot" class="row">
+          <div class="col-6 text-start">
+            <h2>Online Payment</h2>
+          </div>
+          <div class="col-6 text-end">
+            <p>© 2022 Online Payment. All Rights Reserved</p>
+          </div>
+        </div>
+      </footer>
+
   </body>
 </html>

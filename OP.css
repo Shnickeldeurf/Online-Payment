@@ -2,22 +2,153 @@ header {
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
-    position: fixed;
+    position: absolute;
     width: 100%;
     color: rgb(255, 215, 53);
 }
 
 header h1 {
     font-size: 2em;
-    margin-left: 30%;
+    padding-left: 30%;
 }
 
 header p {
-    margin-right: 50%;
+    padding-right: 50%;
 }
 
 .carousel-item {
     width: 100%;
     max-height: 80vh;
     z-index: -1;
+}
+
+#support .text-center {
+    margin: auto;
+}
+
+#support h6 {
+    margin-top: 2%;
+    text-decoration: underline;
+}
+
+#support h1 {
+    font-size: 2em;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    color: #35acc6;
+}
+
+#support p {
+    color: #595959;
+    font-size: 0.8em;
+}
+
+#support button {
+    background-color: #35acc6;
+    border: none;
+    margin-bottom: 2%;
+    border-radius: 30px;
+    color: #fff;
+    padding: 1% 8%;
+    transition: 0.3s;
+}
+
+#support button:hover {
+    background-color: #76e6ff;
+}
+
+.btn-info {
+    background-color: #35acc6;
+    border: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.btn-info:hover {
+    background-color: #76e6ff;
+    color: #fff;
+}
+
+#social {
+    background-color: #76e6ff;
+    padding: 3% 0;
+}
+
+#social .text-start {
+    padding-left: 20%;
+}
+
+#social .d-flex {
+    width: 50%;
+    font-size: 1.5em;
+    justify-content: space-around;
+}
+
+#social .text-end {
+    padding-right: 20%;
+}
+
+.bi-facebook {
+    color: #3b5998;
+}
+
+.fa-twitter-square {
+    color: #00aced;
+}
+
+.bi-linkedin {
+    color: #007bb5;
+}
+
+.bi-instagram {
+    color: #e4405f;
+}
+
+.bi-rss-fill {
+    color: #f26522;
+}
+
+i:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
+#more {
+    background-color: #000;
+    color: #fff;
+    padding: 2% 0;
+}
+
+#more h5::after {
+    content: '';
+    background-color: #313131;
+    display: block;
+    width: 30%;
+    height: 1px;
+    margin: 1% auto;
+}
+
+#more ul {
+    list-style: none;
+    padding: 0;
+    color: #888888;
+}
+
+#more ul li:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+#foot {
+    background-color: #313131;
+    color: #fff;
+}
+
+#foot .text-start {
+    padding-left: 2%;
+}
+
+#foot .text-end {
+    padding-right: 2%;
+    padding-top: 1%;
 }
