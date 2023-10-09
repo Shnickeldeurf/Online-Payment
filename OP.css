@@ -278,3 +278,25 @@ i:hover {
 #supPage #supInfo h6 {
     color: #007bb5;
 }
+
+/*faq*/
+#faq section {
+    padding: 0 20%;
+}
+
+#faq section h1 {
+    color: #00aced;
+    margin: 2% 0;
+}
+
+#faq section li {
+    padding: 1% 0;
+}
+
+#faq section h6 {
+    color: #007bb5;
+}
+
+#faq section p {
+    padding-left: 3%;
+}
