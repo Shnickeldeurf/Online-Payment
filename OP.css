@@ -300,3 +300,21 @@ i:hover {
 #faq section p {
     padding-left: 3%;
 }
+
+/*contact*/
+#contact section{
+    padding: 0 15%;
+}
+
+iframe {
+    max-width: 100%;
+}
+
+#contact section h1 {
+    color: #00aced;
+    margin: 2% 0;
+}
+
+#contact section h4 {
+    color: #007bb5;
+}

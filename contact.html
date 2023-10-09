@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Online Payment</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="OP.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js"></script>
+    <script src="opSupport.js"></script>
+  </head>
+  <body id="contact">
+
+    <header>
+        <div class="col-6">
+            <h1>Online Payment</h1>
+        </div>
+      <div class="col-6 text-end">
+        <p id="LIbtn"><span><i class="bi-person-fill"></i></span>Login/Register</p>
+      </div>
+    </header>
+
+    <div id="abHead">
+    </div>
+ 
+        <!--<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+          Open modal
+        </button>-->
+      
+      <div class="modal modal-lg fade" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+      
+            <div class="modal-body">
+              <div class="d-flex justify-content-end">
+                <h4 class="modal-title text-center">Online Payment</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div>
+                <button type="button" class="btn btn-light">Login</button>
+                <button type="button" class="btn btn-light active">Register</button>
+              </div>
+              <hr>
+              <div>
+                <form id="register">
+                  <div class="row d-flex">
+                    <div class="col-1">
+                      <label for="fullname" class="form-label">Name</label>
+                      <label for="rEmail" class="form-label">Email</label>
+                      <label for="mobile" class="form-label">Mobile</label>
+                      <label for="rPassword" class="form-label">Password</label>
+                    </div>
+                    <div class="col-11">
+                      <div class="d-flex">
+                        <select class="form-select">
+                          <option value="Mr.">Mr.</option>
+                          <option value="Mrs.">Mrs.</option>
+                          <option value="Ms.">Ms.</option>
+                        </select>
+                        <input type="text" id="fullname" class="form-control" placeholder="Name*">
+                      </div>
+                      <input type="rEmail" id="rEmail" class="form-control" placeholder="Email*">
+                      <input type="text" id="mobile" class="form-control" placeholder="Mobile*">
+                      <input type="rPassword" id="rPassword" class="form-control" placeholder="Password*">
+                    </div>
+                  </div>
+                    <button type="submit" class="btn btn-primary">Save and Continue</button>
+                </form>
+              </div>
+              <div>
+                <form id="login">
+                  <div class="row d-flex">
+                    <div class="col-1">
+                      <label for="lEmail" class="form-label">Email</label>
+                      <label for="lPassword" class="form-label">Password</label>
+                    </div>
+                    <div class="col-11">
+                      <input type="lEmail" id="lEmail" class="form-control" placeholder="Email*">
+                      <input type="lPassword" id="lPassword" class="form-control" placeholder="Password*">
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+              </div>
+            </div>
+      
+          </div>
+        </div>
+      </div>
+
+      <div class="secHead">
+        <p><span><i class="fa fa-home"></i></span>/Contact</p>
+      </div>
+
+      <section>
+        <h1>Contact Us</h1>
+        <h4>Our Location</h4>
+        <div class="row d-flex">
+            <div class="col-xl-8">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2926.1030750661866!2d-81.76622956446424!3d26.141100850684847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88dae234003350db%3A0x53b028828c724d1c!2sLorenzo%20Walker%20Technical%20College!5e0!3m2!1sen!2sus!4v1695999321692!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="col-xl-4">
+                <h4>Contact Information</h4>
+                <p>For Queries and Details, get in touch with us: <span>Help</span></p>
+                <br>
+                <h4>Address</h4>
+                <p>
+                    123 Main Street<br> 
+                    Naples, Florida<br>
+                    68989<br>
+                    US<br>
+                    <span>P: </span>(123) 456-7890
+                </p>
+                <br>
+                <h4>Email</h4>
+                <p>contact@example.com</p>
+            </div>
+        </div>
+      </section>
+
+      <div id="support" class="container">
+        <div class="row">
+          <div class="col-6">
+            <img src="support.png" alt="logo" class="img-fluid">
+          </div>
+          <div class="col-6 text-center">
+            <h6>Online Payment</h6>
+            <h1>24/7 Customer Service Support</h1>
+            <p>
+              An an valley indeed so no wonder future nature 
+              vanity. Debating all she mistaken indulged believed
+               provided declared. He many kept on draw lain song 
+               as same.
+            </p>
+            <button class="btn btn-info">Support</button>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div id="social" class="row">
+          <div class="col-md-6 text-start">
+            <h4>Join Us</h4>
+            <div class="d-flex">
+              <span><i class="bi-facebook"></i></span>
+              <span><i class="fa fa-twitter-square"></i></span>
+              <span><i class="bi-linkedin"></i></span>
+              <span><i class="bi-instagram"></i></span>
+              <span><i class="bi-rss-fill"></i></span>
+            </div>
+          </div>
+          <div class="col-md-6 text-end">
+            <h4>Subscribe to our Newsletter</h4>
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Enter Email">
+              <button class="btn btn-info input-group-text">Subscribe</button>
+            </div>
+          </div>
+        </div>
+        <div id="more" class="row">
+          <div class="col-sm-4 text-center">
+            <h5>Company</h5>
+            <ul>
+              <li>About</li>
+              <li>Support</li>
+              <li>FAQ</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+          <div class="col-sm-4 text-center">
+            <h5>Services</h5>
+            <ul>
+              <li>Water</li>
+              <li>Electricity</li>
+              <li>Phone</li>
+              <li>Rent/Morgage</li>
+              <li>Car Insurance</li>
+              <li>Car Loan</li>
+            </ul>
+          </div>
+          <div class="col-sm-4 text-center">
+            <h5>Payment Methods</h5>
+            <ul>
+              <li>Credit Cards</li>
+              <li>Debit Cards</li>
+              <li>Any Visa Debit Card (VBV)</li>
+              <li>Direct Bank Debits</li>
+              <li>Cash Cards</li>
+            </ul>
+          </div>
+        </div>
+        <div id="foot" class="row">
+          <div class="col-6 text-start">
+            <h2>Online Payment</h2>
+          </div>
+          <div class="col-6 text-end">
+            <p>© 2022 Online Payment. All Rights Reserved</p>
+          </div>
+        </div>
+      </footer>
+
+  </body>
+</html>
