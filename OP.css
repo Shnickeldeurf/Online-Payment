@@ -114,6 +114,15 @@ i:hover {
     color: #fff;
 }
 
+.secHead {
+    background-color: #00aced;
+    color: #fff;
+}
+
+.secHead p {
+    padding: 0.5% 0 0.5% 10%;
+}
+
 #more {
     background-color: #000;
     color: #fff;
@@ -201,4 +210,71 @@ i:hover {
 
 .col-11 #fullname {
     margin-left: 0;
+}
+
+/*about*/
+#abHead {
+    width: 100%;
+    height: 25vh;
+    background-image: url(car1.jpg);
+}
+
+#about section {
+    padding: 0 20%;
+}
+
+#about section h1 {
+    color: #00aced;
+}
+
+#about section p {
+    padding-left: 3%;
+}
+
+#about li {
+    padding: 1% 0;
+}
+
+/*support*/
+#supPage section h1 {
+    color: #00aced;
+    margin: 2% 0;
+}
+
+#supPage input, #supPage textarea {
+    margin-top: 2%;
+}
+
+#supPage select {
+    width: 30%;
+}
+
+#supPage .btn-primary {
+    background-color: #00aced;
+    color: #fff;
+    border: none;
+    border-radius: 0%;
+    margin: 2% 0;
+    transition: 0.3s;
+}
+
+#supPage .btn-primary:hover {
+    background-color: #76e6ff;
+    color: #fff;
+}
+
+#supPage #supInfo {
+    margin-top: 15%;
+    margin-left: 2%;
+    background-color: #e9e9e9;
+    border: 1px solid #b2b2b2;
+    padding: 5%;
+}
+
+#supPage #supInfo span {
+    color: #007bb5;
+}
+
+#supPage #supInfo h6 {
+    color: #007bb5;
 }

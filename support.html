@@ -12,9 +12,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js"></script>
-    <script src="opMain.js"></script>
+    <script src="opSupport.js"></script>
   </head>
-  <body id="main">
+  <body id="supPage">
 
     <header>
         <div class="col-6">
@@ -25,34 +25,12 @@
       </div>
     </header>
 
-    <div class="text-center">
-        <div id="cars" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="car1.jpg" alt="Slide 1" class="d-block w-100">
-            </div>
-            <div class="carousel-item">
-              <img src="car2.jpg" alt="Slide 2" class="d-block w-100">
-            </div>
-            <div class="carousel-item">
-              <img src="car3.jpg" alt="Slide 3" class="d-block w-100">
-            </div>
-            <div class="carousel-item">
-              <img src="car4.jpg" alt="Slide 4" class="d-block w-100">
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#cars" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#cars" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </button>
-        </div>
-      </div>
+    <div id="abHead">
+    </div>
  
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+        <!--<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
           Open modal
-        </button>
+        </button>-->
       
       <div class="modal modal-lg fade" id="myModal">
         <div class="modal-dialog">
@@ -114,6 +92,35 @@
           </div>
         </div>
       </div>
+
+      <div class="secHead">
+        <p><span><i class="fa fa-home"></i></span>/About</p>
+      </div>
+
+      <section class="container">
+        <h1>Support</h1>
+        <div class="d-flex">
+          <div class="col-lg-8">
+            <form id="supForm">
+                <select class="form-select" disabled>
+                  <option selected>Payment</option>
+                </select>
+                <input type="text" class="form-control" placeholder="Enter Your Name">
+                <input type="email" class="form-control" placeholder="Enter Your Email ID">
+                <input type="text" class="form-control" placeholder="Enter Your Mobile Number">
+                <textarea class="form-control" rows="10" placeholder="Please Write Here"></textarea>
+                <button type="submit" class="btn btn-primary">Create Ticket</button>
+            </form>
+            </div>
+            <div class="col-lg-4">
+              <div id="supInfo">
+                <p>Call to: 239 234 1234</p>
+                <p>Mail to:<span> support@example.com</span></p>
+                <h6>FAQ</h6>
+              </div>
+            </div>
+        </div>
+      </section>
 
       <div id="support" class="container">
         <div class="row">
