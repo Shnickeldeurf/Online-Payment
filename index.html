@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="OP.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="bmMain.js"></script>
+    <script src="opMain.js"></script>
   </head>
   <body id="main">
 
@@ -47,55 +47,63 @@
           </button>
         </div>
       </div>
-
-      <div class="container mt-3">
-        <h3>Modal Example</h3>
-        <p>Click on the button to open the modal.</p>
-        
+ 
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
           Open modal
         </button>
-      </div>
       
-      <!-- The Modal -->
       <div class="modal modal-lg fade" id="myModal">
         <div class="modal-dialog">
           <div class="modal-content">
       
             <div class="modal-body">
-              <button type="button" class="btn-close" data-bs-dismiss="modal"></button><br>
-              <h4 class="modal-title text-center">Online Payment</h4>
+              <div class="d-flex justify-content-end">
+                <h4 class="modal-title text-center">Online Payment</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
               <div>
-                <button type="button" class="btn-light">Login</button>
-                <button type="button" class="btn-light">Register</button>
+                <button type="button" class="btn btn-light">Login</button>
+                <button type="button" class="btn btn-light active">Register</button>
               </div>
               <hr>
               <div>
                 <form id="register">
-                  <div class="d-flex">
-                    <label for="fullname" class="form-label">Name</label>
-                    <select class="form-select">
-                      <option>Mr.</option>
-                      <option>Mrs.</option>
-                      <option>Ms.</option>
-                    </select>
-                    <input type="text" id="fullname" class="form-control" placeholder="Name*">
+                  <div class="row d-flex">
+                    <div class="col-1">
+                      <label for="fullname" class="form-label">Name</label>
+                      <label for="rEmail" class="form-label">Email</label>
+                      <label for="mobile" class="form-label">Mobile</label>
+                      <label for="rPassword" class="form-label">Password</label>
+                    </div>
+                    <div class="col-11">
+                      <div class="d-flex">
+                        <select class="form-select">
+                          <option>Mr.</option>
+                          <option>Mrs.</option>
+                          <option>Ms.</option>
+                        </select>
+                        <input type="text" id="fullname" class="form-control" placeholder="Name*">
+                      </div>
+                      <input type="rEmail" id="rEmail" class="form-control" placeholder="Email*">
+                      <input type="text" id="mobile" class="form-control" placeholder="Mobile*">
+                      <input type="rPassword" id="rPassword" class="form-control" placeholder="Password*">
+                    </div>
                   </div>
-                  <label for="rEmail" class="form-label">Email</label>
-                  <input type="rEmail" id="rEmail" class="form-control" placeholder="Email*">
-                  <label for="mobile" class="form-label">Mobile</label>
-                  <input type="text" id="mobile" class="form-control" placeholder="Mobile*">
-                  <label for="rPassword" class="form-label">Password</label>
-                  <input type="rPassword" id="rPassword" class="form-control" placeholder="Password*">
-                  <button type="submit" class="btn btn-primary">Save and Continue</button>
+                    <button type="submit" class="btn btn-primary">Save and Continue</button>
                 </form>
               </div>
               <div>
                 <form id="login">
-                  <label for="lEmail" class="form-label">Email</label>
-                  <input type="lEmail" id="lEmail" class="form-control" placeholder="Email*">
-                  <label for="lPassword" class="form-label">Password</label>
-                  <input type="lPassword" id="lPassword" class="form-control" placeholder="Password*">
+                  <div class="row d-flex">
+                    <div class="col-1">
+                      <label for="lEmail" class="form-label">Email</label>
+                      <label for="lPassword" class="form-label">Password</label>
+                    </div>
+                    <div class="col-11">
+                      <input type="lEmail" id="lEmail" class="form-control" placeholder="Email*">
+                      <input type="lPassword" id="lPassword" class="form-control" placeholder="Password*">
+                    </div>
+                  </div>
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
               </div>

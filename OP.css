@@ -1,3 +1,4 @@
+/*index-global*/
 header {
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
@@ -151,4 +152,53 @@ i:hover {
 #foot .text-end {
     padding-right: 2%;
     padding-top: 1%;
+}
+/*modal*/
+.modal-body h4 {
+    padding-right: 35%;
+}
+
+.btn-light {
+    background-color: #dedede;
+    border: none;
+    border-radius: 0%;
+}
+
+.btn-light:hover {
+    background-color: #fff;
+    border: none;
+    border-radius: 0%;
+}
+
+.btn-light.active {
+    background-color: #e38400;
+    border: none;
+    border-radius: 0%;
+}
+
+.modal .btn-primary {
+    background-color: #00aced;
+    color: #fff;
+    border: none;
+    border-radius: 0%;
+    margin: 2% 0 2% 16%;
+    transition: 0.3s;
+}
+
+.modal .btn-primary:hover {
+    background-color: #76e6ff;
+    color: #fff;
+}
+
+.col-1 label {
+    margin-top: 15%;
+}
+
+.col-11 input, .col-11 select {
+    margin-left: 8%;
+    width: 92%;
+}
+
+.col-11 #fullname {
+    margin-left: 0;
 }
