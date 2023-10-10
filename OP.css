@@ -109,7 +109,7 @@ header p {
     color: #f26522;
 }
 
-i:hover {
+footer i:hover {
     cursor: pointer;
     color: #fff;
 }
@@ -317,4 +317,87 @@ iframe {
 
 #contact section h4 {
     color: #007bb5;
+}
+
+/*payments*/
+#payments section{
+    padding: 0 15%;
+}
+
+#payments .uBox {
+    padding: 2% 4%;
+    background-color: #f3f3f3;
+    display: none;
+}
+
+#payments .uActive {
+    display: block;
+}
+
+#payments .uBox i {
+    font-size: 2.6em;
+}
+
+#payments .btn-primary {
+    background-color: #00aced;
+    color: #fff;
+    border: none;
+    border-radius: 0%;
+    margin: 2% 0 2% 0;
+    transition: 0.3s;
+}
+
+#payments .btn-primary:hover {
+    background-color: #76e6ff;
+    color: #fff;
+}
+
+#payments li {
+    list-style: none;
+    border: 1px solid #dedede;
+    margin-top: 5%;
+    padding: 1.5% 0;
+    height: 4.6vh;
+    position: relative;
+}
+
+#payments li span {
+    padding-left: 1%;
+}
+
+#payments li:hover {
+    background-color: #dedede;
+}
+
+#payments .active {
+    background-color: #76e6ff;
+    color: #fff;
+    border: 1px solid #76e6ff;
+    border-left: none;
+}
+
+#payments .active:hover {
+    background-color: #76e6ff;
+    color: #000;
+    border: 1px solid #76e6ff;
+    border-left: none;
+}
+
+#payments .active:after {
+    content:"";
+    position: absolute;
+    left: 100%;
+    top:-4%;
+    width:0px;
+    height:0px;
+    border-top:2.4vh solid transparent;
+    border-left:30px solid #76e6ff;
+    border-bottom:2.4vh solid transparent;
+}
+
+#payments .active span {
+    background-color: #000;
+    color: #fff;
+    padding: 2%;
+    border: #000 1px solid;
 }
