@@ -14,10 +14,15 @@ header h1 {
     padding-left: 30%;
 }
 
-#LIbtn {
+header p {
+    padding-top: 1.5%;
     padding-right: 50%;
     transition: 0.3s;
     cursor: pointer;
+}
+
+header p:hover {
+    color: #dfb718;
 }
 
 .carousel-inner {
