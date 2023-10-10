@@ -401,3 +401,8 @@ iframe {
     padding: 2%;
     border: #000 1px solid;
 }
+
+/*show*/
+#show section{
+    padding: 0 15%;
+}
