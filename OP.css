@@ -4,8 +4,9 @@ header {
     display: flex;
     align-items: center;
     position: absolute;
+    z-index: 999;
     width: 100%;
-    color: rgb(255, 215, 53);
+    color: #ffd735;
 }
 
 header h1 {
@@ -13,14 +14,17 @@ header h1 {
     padding-left: 30%;
 }
 
-header p {
+#LIbtn {
     padding-right: 50%;
+    transition: 0.3s;
+    cursor: pointer;
 }
 
-.carousel-item {
+.carousel-inner {
     width: 100%;
     max-height: 80vh;
-    z-index: -1;
+    pointer-events: none;
+    z-index:10;
 }
 
 #support .text-center {
@@ -144,7 +148,12 @@ footer i:hover {
     color: #888888;
 }
 
-#more ul li:hover {
+#more ul a {
+    color: #888888;
+    text-decoration: none;
+}
+
+#more ul a:hover, #more ul li:hover {
     color: #fff;
     cursor: pointer;
 }
@@ -210,6 +219,10 @@ footer i:hover {
 
 .col-11 #fullname {
     margin-left: 0;
+}
+
+.inActive {
+    display: none;
 }
 
 /*about*/

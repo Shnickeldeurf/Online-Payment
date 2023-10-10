@@ -21,7 +21,7 @@
             <h1>Online Payment</h1>
         </div>
       <div class="col-6 text-end">
-        <p id="LIbtn"><span><i class="bi-person-fill"></i></span>Login/Register</p>
+        <p id="LIbtn" onclick="showModal()"><span><i class="bi-person-fill"></i></span>Login/Register</p>
       </div>
     </header>
 
@@ -49,11 +49,7 @@
           </button>
         </div>
       </div>
- 
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-          Open modal
-        </button>
-      
+
       <div class="modal modal-lg fade" id="myModal">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -64,12 +60,12 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div>
-                <button type="button" class="btn btn-light">Login</button>
-                <button type="button" class="btn btn-light active">Register</button>
+                <button type="button" class="btn btn-light active">Login</button>
+                <button type="button" class="btn btn-light" onclick="change()">Register</button>
               </div>
               <hr>
               <div>
-                <form id="register">
+                <form id="register" class="inActive">
                   <div class="row d-flex">
                     <div class="col-1">
                       <label for="fullname" class="form-label">Name</label>
@@ -158,10 +154,10 @@
           <div class="col-sm-4 text-center">
             <h5>Company</h5>
             <ul>
-              <li>About</li>
-              <li>Support</li>
-              <li>FAQ</li>
-              <li>Contact</li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="support.html">Support</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact</a></li>
             </ul>
           </div>
           <div class="col-sm-4 text-center">
