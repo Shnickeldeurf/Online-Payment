@@ -14,6 +14,12 @@ $(document).ready(function(){
 
     $('#submitReg').click(addUser);
     $('#submitLog').click(login);
+
+    $('#sptBtn').click(function(){
+        window.location.href = 'support.html';
+    });
+
+    $('#subscribeBtn').click(addEmail);
 })
 
 //modal
@@ -37,9 +43,15 @@ if (localStorage.getItem('opUsers') == null) {
 
 if (localStorage.getItem('opCurrentUser') !== null) {
     current = JSON.parse(localStorage.getItem('opCurrentUser'));
-    console.log(current);
 } else {
     current = null
+}
+
+if (localStorage.getItem('opMailingList') == null) {
+    ML = [];
+    localStorage.setItem('opMailingList', JSON.stringify(ML));
+} else {
+    ML = JSON.parse(localStorage.getItem('opMailingList'));
 }
 
 //show login-register
@@ -114,8 +126,6 @@ function login() {
     email = $('#lEmail').val();
     password = $('#lPassword').val();
 
-    console.log(users);
-
     for (let i = 0; i < users.length; i++) {
         if (users[i].email == email && users[i].password == password) {
             current = users[i];
@@ -124,5 +134,18 @@ function login() {
         } else if (i == users.length - 1) {
             alert('Invalid Email or Password');
         }
+    }
+}
+
+//email list
+function addEmail() {
+    email = $('#email').val();
+    if (email == '') {
+        alert('Email cannot be empty');
+    } else if (email.indexOf('@') == -1 || email.indexOf('.') == -1) {
+        alert('Invalid Email');
+    } else {
+        ML.push(email);
+        localStorage.setItem('opMailingList', JSON.stringify(ML));
     }
 }
