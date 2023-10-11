@@ -22,6 +22,29 @@ $(document).ready(function(){
   $('#subscribeBtn').click(addEmail);
 })
 
+//payUnique
+
+function changePay(i) {
+  buttons = document.getElementById('payBtns').children;
+  boxes = document.getElementsByClassName('uBox');
+
+  for (j = 0; j < boxes.length; j++) {
+    boxes[j].classList.remove('uActive');
+  }
+  boxes[i].classList.add('uActive');
+  for (j = 0; j < buttons.length; j++) {
+    buttons[j].classList.remove('active');
+  }
+  buttons[i].classList.add('active');
+}
+
+
+
+
+
+
+
+
 //modal
 function showModal(){
   modal = $('#myModal').modal('show');

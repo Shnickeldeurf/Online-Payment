@@ -99,18 +99,18 @@
         <h1>Your Payments Here</h1>
         <div class="row d-flex">
             <div class="col-lg-5">
-                <ul>
-                    <li class="active"><span><i class="bi-phone-vibrate"></i></span> Mobile</li>
-                    <li><span><i class="bi-house-door-fill"></i></span> Rent/Mortgage</li>
-                    <li><span><i class="fa fa-car"></i></span> Car Loan</li>
-                    <li><span><i class="bi-lightbulb"></i></span> Electricity</li>
-                    <li><span><i class="fa fa-id-card-o"></i></span> Car Insurance</li>
-                    <li><span><i class="fa fa-shower"></i></span> Water</li>
+                <ul id="payBtns">
+                    <li onclick="changePay(0)" class="active"><span><i class="bi-phone-vibrate"></i></span> Mobile</li>
+                    <li onclick="changePay(1)"><span><i class="bi-house-door-fill"></i></span> Rent/Mortgage</li>
+                    <li onclick="changePay(2)"><span><i class="fa fa-car"></i></span> Car Loan</li>
+                    <li onclick="changePay(3)"><span><i class="bi-lightbulb"></i></span> Electricity</li>
+                    <li onclick="changePay(4)"><span><i class="fa fa-id-card-o"></i></span> Car Insurance</li>
+                    <li onclick="changePay(5)"><span><i class="fa fa-shower"></i></span> Water</li>
                 </ul>
             </div>
             <div class="col-lg-7">
 
-                <div class="uBox">
+                <div class="uBox uActive">
                     <h1><span><i class="bi-phone-vibrate"></i></span></h1>
                     <form id="phone">
                         <p>Enter Your Account Number</p>
@@ -140,7 +140,7 @@
                     </form>
                 </div>
 
-                <div class="uBox uActive">
+                <div class="uBox">
                     <h1><span><i class="bi-house-door-fill"></i></span></h1>
                     <form id="reMor">
                         <p>Enter Your Account Number</p>

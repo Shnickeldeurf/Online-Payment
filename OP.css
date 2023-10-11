@@ -356,6 +356,7 @@ iframe {
 /*payments*/
 #payments section{
     padding: 0 15%;
+    min-height: 80vh;
 }
 
 #payments .uBox {
@@ -386,38 +387,39 @@ iframe {
     color: #fff;
 }
 
-#payments li {
+#payments #payBtns li {
     list-style: none;
     border: 1px solid #dedede;
     margin-top: 5%;
     padding: 1.5% 0;
     height: 4.6vh;
     position: relative;
+    cursor: pointer;
 }
 
-#payments li span {
+#payments #payBtns li span {
     padding-left: 1%;
 }
 
-#payments li:hover {
+#payments #payBtns li:hover {
     background-color: #dedede;
 }
 
-#payments .active {
+#payments #payBtns .active {
     background-color: #76e6ff;
     color: #fff;
     border: 1px solid #76e6ff;
     border-left: none;
 }
 
-#payments .active:hover {
+#payments #payBtns .active:hover {
     background-color: #76e6ff;
-    color: #000;
+    color: #fff;
     border: 1px solid #76e6ff;
     border-left: none;
 }
 
-#payments .active:after {
+#payments #payBtns .active:after {
     content:"";
     position: absolute;
     left: 100%;
@@ -429,7 +431,7 @@ iframe {
     border-bottom:2.4vh solid transparent;
 }
 
-#payments .active span {
+#payments #payBtns .active span {
     background-color: #000;
     color: #fff;
     padding: 2%;
