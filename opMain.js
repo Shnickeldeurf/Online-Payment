@@ -6,7 +6,7 @@ $(document).ready(function(){
         '<ul class="dropdown-menu">' +
           '<li><a class="dropdown-item" href="payments.html">Make a payment</a></li>' +
           '<li><a class="dropdown-item" href="show.html">Display Data</a></li>' +
-          '<li><a class="dropdown-item" href="#">LOGOUT</a></li>' +
+          '<li><a class="dropdown-item" onclick="logout()" href="#">LOGOUT</a></li>' +
         '</ul>';
         } else {
         side.innerHTML = '<p id="LIbtn" onclick="showModal()"><span><i class="bi-person-fill"></i></span>Login/Register</p>';
@@ -15,6 +15,17 @@ $(document).ready(function(){
     $('#submitReg').click(addUser);
     $('#submitLog').click(login);
 })
+
+//modal
+function showModal(){
+    modal = $('#myModal').modal('show');
+  }
+
+//logout 
+function logout() {
+    localStorage.removeItem('opCurrentUser');
+    window.location.reload();
+}
 
 //get set users
 if (localStorage.getItem('opUsers') == null) {
@@ -92,7 +103,6 @@ function addUser(user) {
     }
 
     if (user.fullname && user.email && user.mobile && user.password) {
-        console.log(user);
         users.push(user);
         localStorage.setItem('opUsers', JSON.stringify(users));
         showLogin();
@@ -104,11 +114,13 @@ function login() {
     email = $('#lEmail').val();
     password = $('#lPassword').val();
 
+    console.log(users);
+
     for (let i = 0; i < users.length; i++) {
         if (users[i].email == email && users[i].password == password) {
             current = users[i];
             localStorage.setItem('opCurrentUser', JSON.stringify(current));
-            window.location.href = "payments.html";
+            window.location.reload();
         } else if (i == users.length - 1) {
             alert('Invalid Email or Password');
         }
