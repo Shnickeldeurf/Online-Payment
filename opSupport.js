@@ -20,7 +20,61 @@ $(document).ready(function(){
     });
 
     $('#subscribeBtn').click(addEmail);
+
+    $('#supBtn').click(newTicket);
 })
+
+//supportUnique
+if (localStorage.getItem('opTickets') == null) {
+    tickets = [];
+    localStorage.setItem('opTickets', JSON.stringify(tickets));
+} else {
+    tickets = JSON.parse(localStorage.getItem('opTickets'));
+}
+
+function newTicket(){
+    sName = $('#supName').val();
+    sEmail = $('#supEmail').val();
+    sMobile = $('#supMobile').val();
+    sMessage = $('#supMsg').val();
+    ticket = {}
+    re = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+
+    if (sName == '') {
+        alert('Name cannot be empty');
+    } else {
+        ticket.name = sName;
+    }
+
+    if (sEmail.indexOf('@') == -1 || sEmail.indexOf('.') == -1) {
+        alert('Invalid Email');
+    } else {
+        ticket.email = sEmail;
+    }
+
+    if (re.test(sMobile) == false) {
+        alert('Invalid Mobile');
+    } else {
+        ticket.mobile = sMobile;
+    }
+
+    if (sMessage == '') {
+        alert('Message cannot be empty');
+    } else {
+        ticket.message = sMessage;
+    }
+
+    if (ticket.name && ticket.email && ticket.mobile && ticket.message) {
+        tickets.push(ticket);
+        localStorage.setItem('opTickets', JSON.stringify(tickets));
+    }
+
+    $('#supName').val('');
+    $('#supEmail').val('');
+    $('#supMobile').val('');
+    $('#supMsg').val('');
+    console.log(tickets);
+}
 
 //modal
 function showModal(){

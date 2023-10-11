@@ -1,12 +1,16 @@
 $(document).ready(function(){
   side = document.getElementById('side');
-  side.innerHTML = '<button id="dropbtn" type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown">You are logged in as: ' + 
-  current.fullname +'</button>' +
+  if (current !== null) {
+      side.innerHTML = '<button id="dropbtn" type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown">You are logged in as: ' + 
+      current.fullname +'</button>' +
       '<ul class="dropdown-menu">' +
         '<li><a class="dropdown-item" href="payments.html">Make a payment</a></li>' +
         '<li><a class="dropdown-item" href="show.html">Display Data</a></li>' +
         '<li><a class="dropdown-item" onclick="logout()" href="#">LOGOUT</a></li>' +
       '</ul>';
+      } else {
+      window.location.href = 'index.html';
+  }
 
   $('#submitReg').click(addUser);
   $('#submitLog').click(login);
@@ -37,9 +41,11 @@ if (localStorage.getItem('opUsers') == null) {
   users = JSON.parse(localStorage.getItem('opUsers'));
 }
 
-if (localStorage.getItem('opCurrentUser') == null) {
-  window.location.href = 'index.html';
-} 
+if (localStorage.getItem('opCurrentUser') !== null) {
+  current = JSON.parse(localStorage.getItem('opCurrentUser'));
+} else {
+  current = null
+}
 
 if (localStorage.getItem('opMailingList') == null) {
   ML = [];
