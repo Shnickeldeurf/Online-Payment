@@ -21,7 +21,8 @@
             <h1>Online Payment</h1>
         </div>
       <div class="col-6 text-end">
-        <p id="LIbtn" onclick="showModal()"><span><i class="bi-person-fill"></i></span>Login/Register</p>
+        <div id="side">
+        </div>
       </div>
     </header>
 
@@ -87,7 +88,7 @@
                       <input type="rPassword" id="rPassword" class="form-control" placeholder="Password*">
                     </div>
                   </div>
-                    <button type="submit" class="btn btn-primary">Save and Continue</button>
+                    <button id="submitReg" type="button" class="btn btn-primary">Save and Continue</button>
                 </form>
               </div>
               <div>
@@ -102,7 +103,7 @@
                       <input type="lPassword" id="lPassword" class="form-control" placeholder="Password*">
                     </div>
                   </div>
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button id="submitLog" type="button" class="btn btn-primary">Submit</button>
                 </form>
               </div>
             </div>
@@ -192,5 +193,10 @@
         </div>
       </footer>
 
+      <script>
+        function showModal(){
+          modal = $('#myModal').modal('show');
+        }
+      </script>
   </body>
 </html>

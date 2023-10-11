@@ -1,8 +1,19 @@
 $(document).ready(function(){
-    side = $('header .text-end');
-    if (current != null) {
-        side.innerHTML = 'You are logged in as: ' + current.name;
+    side = document.getElementById('side');
+    if (current !== null) {
+        side.innerHTML = '<button id="dropbtn" type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown">You are logged in as: ' + 
+        current.fullname +'</button>' +
+        '<ul class="dropdown-menu">' +
+          '<li><a class="dropdown-item" href="payments.html">Make a payment</a></li>' +
+          '<li><a class="dropdown-item" href="show.html">Display Data</a></li>' +
+          '<li><a class="dropdown-item" href="#">LOGOUT</a></li>' +
+        '</ul>';
+        } else {
+        side.innerHTML = '<p id="LIbtn" onclick="showModal()"><span><i class="bi-person-fill"></i></span>Login/Register</p>';
     }
+
+    $('#submitReg').click(addUser);
+    $('#submitLog').click(login);
 })
 
 //get set users
@@ -15,13 +26,9 @@ if (localStorage.getItem('opUsers') == null) {
 
 if (localStorage.getItem('opCurrentUser') !== null) {
     current = JSON.parse(localStorage.getItem('opCurrentUser'));
-}
-
-//show modal
-function showModal() {
-    modal = $('#myModal');
-
-    modal.modal('show');
+    console.log(current);
+} else {
+    current = null
 }
 
 //show login-register
@@ -49,4 +56,61 @@ function showLogin() {
 
     reg.hide();
     log.show();
+}
+
+//add user
+function addUser(user) {
+    fullname = $('#fullname').val();
+    email = $('#rEmail').val();
+    mobile = $('#mobile').val();
+    password = $('#rPassword').val();
+    user = {}
+    var re = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+
+    if (fullname == '') {
+        alert('Name cannot be empty');
+    } else {
+        user.fullname = fullname;
+    }
+ 
+    if (email.indexOf('@') == -1 || email.indexOf('.') == -1) {
+        alert('Invalid Email');
+    } else {
+        user.email = email;
+    }
+
+    if (re.test(mobile) == false) {
+        alert('Invalid Mobile Number');
+    } else {
+        user.mobile = mobile;
+    }
+
+    if (password == '') {
+        alert('Password cannot be empty');
+    } else {
+        user.password = password;
+    }
+
+    if (user.fullname && user.email && user.mobile && user.password) {
+        console.log(user);
+        users.push(user);
+        localStorage.setItem('opUsers', JSON.stringify(users));
+        showLogin();
+    }
+}
+
+//login 
+function login() {
+    email = $('#lEmail').val();
+    password = $('#lPassword').val();
+
+    for (let i = 0; i < users.length; i++) {
+        if (users[i].email == email && users[i].password == password) {
+            current = users[i];
+            localStorage.setItem('opCurrentUser', JSON.stringify(current));
+            window.location.href = "payments.html";
+        } else if (i == users.length - 1) {
+            alert('Invalid Email or Password');
+        }
+    }
 }
