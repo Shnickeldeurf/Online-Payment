@@ -20,10 +20,46 @@ $(document).ready(function(){
   });
 
   $('#subscribeBtn').click(addEmail);
+
+  $('input[type="date"]').val(new Date().toISOString().split('T')[0] );
+
+  $('#pSubmit').click(addPhone);
+  $('#rmSubmit').click(addRM);
+  $('#clSubmit').click(addCarLoan);
+  $('#eSubmit').click(addElec);
+  $('#ciSubmit').click(addCarIn);
+  $('#wSubmit').click(addWater);
 })
 
 //payUnique
+switch (new Date().getMonth()) {
+  case 0: month = 'January';
+    break;
+  case 1: month = 'February';
+    break;
+  case 2: month = 'March';
+    break;
+  case 3: month = 'April';
+    break;
+  case 4: month = 'May';
+    break;
+  case 5: month = 'June';
+    break;
+  case 6: month = 'July';
+    break;
+  case 7: month = 'August';
+    break;
+  case 8: month = 'September';
+    break;
+  case 9: month = 'October';
+    break;
+  case 10: month = 'November';
+    break;
+  case 11: month = 'December';
+    break;
+}
 
+//change
 function changePay(i) {
   buttons = document.getElementById('payBtns').children;
   boxes = document.getElementsByClassName('uBox');
@@ -38,16 +74,222 @@ function changePay(i) {
   buttons[i].classList.add('active');
 }
 
+//add phone payment
+function addPhone() {
+  accNum = $('#pAcc').val();
+  provider = $('#pPro').find(':selected').val();
+  amount = $('#pAm').val();
+  date = new Date();
+  month = month;
+  year = date.getFullYear();
 
+  paid = false;
 
+  for (i = 0; i < payments.length; i++) {
+    if (payments[i].type == 'phone') {
+      paid = true;
+      if (payments[i].accNum != accNum) {
+        alert('This account number does not match');
+      } else if (payments[i].provider != provider) {
+        alert('This provider does not match');
+      } else {
+        paid = false;
+      }
+    }
+  }
 
+  if (paid == false) {
+    payment = {
+      type : 'phone',
+      accNum: accNum,
+      provider: provider,
+      amount: amount,
+      month: month,
+      year: year
+    }
+    payments.push(payment);
+    localStorage.setItem([current.email] + 'payments', JSON.stringify(payments));
+  }
+}
 
+//add rent/mortgage payment
+function addRM() {
+  accNum = $('#rmAcc').val();
+  amount = $('#rmAm').val();
+  date = new Date();
+  month = month;
+  year = date.getFullYear();
 
+  paid = false;
 
+  for (i = 0; i < payments.length; i++) {
+    if (payments[i].type == 'rent/mortgage') {
+      paid = true;
+      if (payments[i].accNum != accNum) {
+        alert('This account number does not match');
+      }  else {
+        paid = false;
+      }
+    }
+  }
 
-//modal
-function showModal(){
-  modal = $('#myModal').modal('show');
+  if (paid == false) {
+    payment = {
+      type : 'rent/mortgage',
+      accNum: accNum,
+      amount: amount,
+      month: month,
+      year: year
+    }
+    payments.push(payment);
+    localStorage.setItem([current.email] + 'payments', JSON.stringify(payments));
+  }
+}
+
+//add car loan payment
+function addCarLoan() {
+  accNum = $('#clAcc').val();
+  amount = $('#clAm').val();
+  date = new Date();
+  month = month;
+  year = date.getFullYear();
+
+  paid = false;
+
+  for (i = 0; i < payments.length; i++) {
+    if (payments[i].type == 'car loan') {
+      paid = true;
+      if (payments[i].accNum != accNum) {
+        alert('This account number does not match');
+      }  else {
+        paid = false;
+      }
+    }
+  }
+
+  if (paid == false) {
+    payment = {
+      type : 'car loan',
+      accNum: accNum,
+      amount: amount,
+      month: month,
+      year: year
+    }
+    payments.push(payment);
+    localStorage.setItem([current.email] + 'payments', JSON.stringify(payments));
+  }
+}
+
+//add electric payment
+function addElec() {
+  accNum = $('#eAcc').val();
+  provider = $('#ePro').find(':selected').val();
+  amount = $('#eAm').val();
+  date = new Date();
+  month = month;
+  year = date.getFullYear();
+
+  paid = false;
+
+  for (i = 0; i < payments.length; i++) {
+    if (payments[i].type == 'electric') {
+      paid = true;
+      if (payments[i].accNum != accNum) {
+        alert('This account number does not match');
+      } else if (payments[i].provider != provider) {
+        alert('This provider does not match');
+      } else {
+        paid = false;
+      }
+    }
+  }
+
+  if (paid == false) {
+    payment = {
+      type : 'electric',
+      accNum: accNum,
+      provider: provider,
+      amount: amount,
+      month: month,
+      year: year
+    }
+    payments.push(payment);
+    localStorage.setItem([current.email] + 'payments', JSON.stringify(payments));
+  }
+}
+
+//add car insurance payment
+function addCarIn() {
+  accNum = $('#ciAcc').val();
+  amount = $('#ciAm').val();
+  date = new Date();
+  month = month;
+  year = date.getFullYear();
+
+  paid = false;
+
+  for (i = 0; i < payments.length; i++) {
+    if (payments[i].type == 'car insurance') {
+      paid = true;
+      if (payments[i].accNum != accNum) {
+        alert('This account number does not match');
+      }  else {
+        paid = false;
+      }
+    }
+  }
+
+  if (paid == false) {
+    payment = {
+      type : 'car insurance',
+      accNum: accNum,
+      amount: amount,
+      month: month,
+      year: year
+    }
+    payments.push(payment);
+    localStorage.setItem([current.email] + 'payments', JSON.stringify(payments));
+  }
+}
+
+//add water payment
+function addWater() {
+  accNum = $('#wAcc').val();
+  provider = $('#wPro').find(':selected').val();
+  amount = $('#wAm').val();
+  date = new Date();
+  month = month;
+  year = date.getFullYear();
+
+  paid = false;
+
+  for (i = 0; i < payments.length; i++) {
+    if (payments[i].type == 'water') {
+      paid = true;
+      if (payments[i].accNum != accNum) {
+        alert('This account number does not match');
+      } else if (payments[i].provider != provider) {
+        alert('This provider does not match');
+      } else {
+        paid = false;
+      }
+    }
+  }
+
+  if (paid == false) {
+    payment = {
+      type : 'water',
+      accNum: accNum,
+      provider: provider,
+      amount: amount,
+      month: month,
+      year: year
+    }
+    payments.push(payment);
+    localStorage.setItem([current.email] + 'payments', JSON.stringify(payments));
+  }
+
+  console.log(payments);
 }
 
 //logout 
@@ -75,6 +317,13 @@ if (localStorage.getItem('opMailingList') == null) {
   localStorage.setItem('opMailingList', JSON.stringify(ML));
 } else {
   ML = JSON.parse(localStorage.getItem('opMailingList'));
+}
+
+if (localStorage.getItem([current.email] + 'payments') == null) {
+  payments = [];
+ localStorage.setItem([current.email] + 'payments', JSON.stringify(payments));
+} else {
+  payments = JSON.parse(localStorage.getItem([current.email] + 'payments'));
 }
 
 //show login-register

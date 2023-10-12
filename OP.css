@@ -373,6 +373,10 @@ iframe {
     font-size: 2.6em;
 }
 
+#payments .uBox input, #payments .uBox select {
+    margin-bottom: 2%;
+}
+
 #payments .btn-primary {
     background-color: #00aced;
     color: #fff;
