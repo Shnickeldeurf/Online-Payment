@@ -275,11 +275,11 @@ footer i:hover {
     margin: 2% 0;
 }
 
-#supPage input, #supPage textarea {
+#supPage #supForm input, #supPage textarea {
     margin-top: 2%;
 }
 
-#supPage select {
+#supPage #supSel {
     width: 30%;
 }
 
