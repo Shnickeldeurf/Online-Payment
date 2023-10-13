@@ -20,7 +20,60 @@ $(document).ready(function(){
     });
   
     $('#subscribeBtn').click(addEmail);
+
+    showPayments();
   })
+
+  //show unique
+  everyMonth = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  everyType = ['phone', 'rent/mortgage', 'car loan', 'electric', 'car insurance', 'water'];
+  //show
+  function showPayments(){
+
+    allPay = [];
+
+    for (var i = 0; i < everyMonth.length; i++) {
+      arr = [];
+      for (var j = 0; j < payments.length; j++) {
+        if (payments[j].month == everyMonth[i]) {
+          arr.push(payments[j]);
+        }
+      }
+      if (arr.length > 0) {
+        allPay.push(arr);
+      }
+    }
+
+    list = document.getElementById('sumBody');
+    list.innerHTML = '';
+
+    for (var i = 0; i < allPay.length; i++) {
+      row = ''
+      row += '<tr><td>' + allPay[i][0].month + '</td>';
+      for (var j = 0; j < everyType.length; j++) {
+        for (var k = 0; k < allPay[i].length; k++) {
+          if (allPay[i][k].type == everyType[j]) {
+            row += '<td>$' + Number(allPay[i][k].amount).toFixed(2) + '</td>';
+            paid = true;
+            break;
+        } else {
+          paid = false;
+        }
+      }
+      if (paid == false) {
+        row += '<td>Pending...</td>';
+      }
+    }
+
+      /*for (var j = 0; j < allPay[i].length; j++) {
+        row += '<td>' + allPay[i][j].amount + '</td>';
+      }*/
+
+      row += '</tr>';
+
+      list.innerHTML += row;
+    }
+  }
   
   //modal
   function showModal(){
@@ -52,6 +105,13 @@ $(document).ready(function(){
     localStorage.setItem('opMailingList', JSON.stringify(ML));
   } else {
     ML = JSON.parse(localStorage.getItem('opMailingList'));
+  }
+
+  if (localStorage.getItem([current.email] + 'payments') == null) {
+    payments = [];
+   localStorage.setItem([current.email] + 'payments', JSON.stringify(payments));
+  } else {
+    payments = JSON.parse(localStorage.getItem([current.email] + 'payments'));
   }
   
   //show login-register

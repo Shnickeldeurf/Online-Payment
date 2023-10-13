@@ -12,9 +12,6 @@ $(document).ready(function(){
       window.location.href = 'index.html';
   }
 
-  $('#submitReg').click(addUser);
-  $('#submitLog').click(login);
-
   $('#sptBtn').click(function(){
       window.location.href = 'support.html';
   });
@@ -79,9 +76,7 @@ function addPhone() {
   accNum = $('#pAcc').val();
   provider = $('#pPro').find(':selected').val();
   amount = $('#pAm').val();
-  date = new Date();
   month = month;
-  year = date.getFullYear();
 
   paid = false;
 
@@ -92,6 +87,9 @@ function addPhone() {
         alert('This account number does not match');
       } else if (payments[i].provider != provider) {
         alert('This provider does not match');
+      } else if (payments[i].month === month) {
+        payments[i].amount = Number(payments[i].amount) + Number(amount);
+        localStorage.setItem([current.email] + 'payments', JSON.stringify(payments));
       } else {
         paid = false;
       }
@@ -105,7 +103,6 @@ function addPhone() {
       provider: provider,
       amount: amount,
       month: month,
-      year: year
     }
     payments.push(payment);
     localStorage.setItem([current.email] + 'payments', JSON.stringify(payments));
@@ -116,9 +113,7 @@ function addPhone() {
 function addRM() {
   accNum = $('#rmAcc').val();
   amount = $('#rmAm').val();
-  date = new Date();
   month = month;
-  year = date.getFullYear();
 
   paid = false;
 
@@ -127,7 +122,10 @@ function addRM() {
       paid = true;
       if (payments[i].accNum != accNum) {
         alert('This account number does not match');
-      }  else {
+      } else if (payments[i].month === month) {
+        payments[i].amount = Number(payments[i].amount) + Number(amount);
+        localStorage.setItem([current.email] + 'payments', JSON.stringify(payments));
+      } else {
         paid = false;
       }
     }
@@ -139,7 +137,6 @@ function addRM() {
       accNum: accNum,
       amount: amount,
       month: month,
-      year: year
     }
     payments.push(payment);
     localStorage.setItem([current.email] + 'payments', JSON.stringify(payments));
@@ -150,9 +147,7 @@ function addRM() {
 function addCarLoan() {
   accNum = $('#clAcc').val();
   amount = $('#clAm').val();
-  date = new Date();
   month = month;
-  year = date.getFullYear();
 
   paid = false;
 
@@ -161,7 +156,10 @@ function addCarLoan() {
       paid = true;
       if (payments[i].accNum != accNum) {
         alert('This account number does not match');
-      }  else {
+      } else if (payments[i].month === month) {
+        payments[i].amount = Number(payments[i].amount) + Number(amount);
+        localStorage.setItem([current.email] + 'payments', JSON.stringify(payments));
+      } else {
         paid = false;
       }
     }
@@ -173,7 +171,6 @@ function addCarLoan() {
       accNum: accNum,
       amount: amount,
       month: month,
-      year: year
     }
     payments.push(payment);
     localStorage.setItem([current.email] + 'payments', JSON.stringify(payments));
@@ -185,9 +182,7 @@ function addElec() {
   accNum = $('#eAcc').val();
   provider = $('#ePro').find(':selected').val();
   amount = $('#eAm').val();
-  date = new Date();
   month = month;
-  year = date.getFullYear();
 
   paid = false;
 
@@ -198,6 +193,9 @@ function addElec() {
         alert('This account number does not match');
       } else if (payments[i].provider != provider) {
         alert('This provider does not match');
+      } else if (payments[i].month === month) {
+        payments[i].amount = Number(payments[i].amount) + Number(amount);
+        localStorage.setItem([current.email] + 'payments', JSON.stringify(payments));
       } else {
         paid = false;
       }
@@ -211,7 +209,6 @@ function addElec() {
       provider: provider,
       amount: amount,
       month: month,
-      year: year
     }
     payments.push(payment);
     localStorage.setItem([current.email] + 'payments', JSON.stringify(payments));
@@ -222,9 +219,7 @@ function addElec() {
 function addCarIn() {
   accNum = $('#ciAcc').val();
   amount = $('#ciAm').val();
-  date = new Date();
   month = month;
-  year = date.getFullYear();
 
   paid = false;
 
@@ -233,7 +228,10 @@ function addCarIn() {
       paid = true;
       if (payments[i].accNum != accNum) {
         alert('This account number does not match');
-      }  else {
+      } else if (payments[i].month === month) {
+        payments[i].amount = Number(payments[i].amount) + Number(amount);
+        localStorage.setItem([current.email] + 'payments', JSON.stringify(payments));
+      } else {
         paid = false;
       }
     }
@@ -245,7 +243,6 @@ function addCarIn() {
       accNum: accNum,
       amount: amount,
       month: month,
-      year: year
     }
     payments.push(payment);
     localStorage.setItem([current.email] + 'payments', JSON.stringify(payments));
@@ -257,9 +254,7 @@ function addWater() {
   accNum = $('#wAcc').val();
   provider = $('#wPro').find(':selected').val();
   amount = $('#wAm').val();
-  date = new Date();
   month = month;
-  year = date.getFullYear();
 
   paid = false;
 
@@ -270,6 +265,9 @@ function addWater() {
         alert('This account number does not match');
       } else if (payments[i].provider != provider) {
         alert('This provider does not match');
+      } else if (payments[i].month === month) {
+        payments[i].amount = Number(payments[i].amount) + Number(amount);
+        localStorage.setItem([current.email] + 'payments', JSON.stringify(payments));
       } else {
         paid = false;
       }
@@ -283,13 +281,10 @@ function addWater() {
       provider: provider,
       amount: amount,
       month: month,
-      year: year
     }
     payments.push(payment);
     localStorage.setItem([current.email] + 'payments', JSON.stringify(payments));
   }
-
-  console.log(payments);
 }
 
 //logout 
@@ -324,89 +319,6 @@ if (localStorage.getItem([current.email] + 'payments') == null) {
  localStorage.setItem([current.email] + 'payments', JSON.stringify(payments));
 } else {
   payments = JSON.parse(localStorage.getItem([current.email] + 'payments'));
-}
-
-//show login-register
-function showReg() {
-  b1 = $('#logTab');
-  b2 = $('#regTab');
-  reg = $('#register');
-  log = $('#login');
-
-  b1.removeClass('active');
-  b2.addClass('active');
-
-  reg.show();
-  log.hide();
-}
-
-function showLogin() {
-  b1 = $('#logTab');
-  b2 = $('#regTab');
-  reg = $('#register');
-  log = $('#login');
-
-  b1.addClass('active');
-  b2.removeClass('active');
-
-  reg.hide();
-  log.show();
-}
-
-//add user
-function addUser(user) {
-  fullname = $('#fullname').val();
-  email = $('#rEmail').val();
-  mobile = $('#mobile').val();
-  password = $('#rPassword').val();
-  user = {}
-  var re = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
-
-  if (fullname == '') {
-      alert('Name cannot be empty');
-  } else {
-      user.fullname = fullname;
-  }
-
-  if (email.indexOf('@') == -1 || email.indexOf('.') == -1) {
-      alert('Invalid Email');
-  } else {
-      user.email = email;
-  }
-
-  if (re.test(mobile) == false) {
-      alert('Invalid Mobile Number');
-  } else {
-      user.mobile = mobile;
-  }
-
-  if (password == '') {
-      alert('Password cannot be empty');
-  } else {
-      user.password = password;
-  }
-
-  if (user.fullname && user.email && user.mobile && user.password) {
-      users.push(user);
-      localStorage.setItem('opUsers', JSON.stringify(users));
-      showLogin();
-  }
-}
-
-//login 
-function login() {
-  email = $('#lEmail').val();
-  password = $('#lPassword').val();
-
-  for (let i = 0; i < users.length; i++) {
-      if (users[i].email == email && users[i].password == password) {
-          current = users[i];
-          localStorage.setItem('opCurrentUser', JSON.stringify(current));
-          window.location.reload();
-      } else if (i == users.length - 1) {
-          alert('Invalid Email or Password');
-      }
-  }
 }
 
 //email list
